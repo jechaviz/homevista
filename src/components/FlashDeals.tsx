@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Clock } from 'lucide-react';
 import { useDemo } from '../contexts/DemoContext';
-import { demoProducts } from '../data/demoData';
+import { products } from '../data/products';
 
 const FlashDeals: React.FC = () => {
   const { isDemoMode } = useDemo();
-  const flashDeals = isDemoMode ? demoProducts.filter(p => p.discountedPrice).slice(0, 4) : [];
+  const flashDeals = isDemoMode ? products.filter(p => p.discountedPrice).slice(0, 4) : [];
   const [timeLeft, setTimeLeft] = useState(12 * 60 * 60); // 12 hours in seconds
 
   useEffect(() => {
